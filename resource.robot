@@ -12,7 +12,7 @@ ${BTN_LOGIN}      id=botaoLogin
 ${BTN_BUSCAR}     id=input-busca
 ${CAMPO_BUSCA}    id=input-busca
 ${BTN_FILTRAR}    class=.sc-dNLxif.eFRWEq
-${BOTAO_COMPRAR}  css.sc-gZMcBi.kqbbWo
+${BOTAO_COMPRAR}  css=.sc-gZMcBi.kqbbWo
 
 *** Keywords ***
 #CENARIO 1
@@ -58,6 +58,3 @@ Clicar no item
 
 Clicar no botão ir para o carrinho
     Click Button   ${BOTAO_COMPRAR}
-
-Fechar navegador
-    Close browser

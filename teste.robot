@@ -22,4 +22,4 @@ Cenario 3: Selecionar uma categoria no menu de “Departamento” e adiciona um 
   Entrar na opção "Hardware"
   Clicar no item
   Clicar no botão ir para o carrinho
-  Fechar navegador
+  Validar mensagem "PRODUTO ADICIONADO NO CARRINHO"

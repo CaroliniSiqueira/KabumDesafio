@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1 (Python 3.9.7 on win32)" generated="20210903 03:05:10.162" rpa="false" schemaversion="2">
+<suite id="s1" name="Teste" source="C:\RobotFramework\Desafio_Kabum\teste.robot">
+<test id="s1-t1" name="Cenario 1:Fazer validação de um usuário inválido">
+<kw name="Acessar o site KaBuM" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210903 03:05:10.443" level="INFO">Opening browser 'gc' to base url 'https://www.kabum.com.br/'.</msg>
+<status status="PASS" starttime="20210903 03:05:10.443" endtime="20210903 03:05:18.496"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210903 03:05:18.496" endtime="20210903 03:05:19.119"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>KaBuM! | Maior E-commerce de Tecnologia e Games da América Latina</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20210903 03:05:20.071" level="INFO">Page title is 'KaBuM! | Maior E-commerce de Tecnologia e Games da América Latina'.</msg>
+<status status="PASS" starttime="20210903 03:05:19.119" endtime="20210903 03:05:20.071"/>
+</kw>
+<status status="PASS" starttime="20210903 03:05:10.443" endtime="20210903 03:05:20.072"/>
+</kw>
+<kw name="Clicar em &quot;Login&quot;" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=linkLoginHeader</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210903 03:05:20.075" level="INFO">Clicking element 'id=linkLoginHeader'.</msg>
+<status status="PASS" starttime="20210903 03:05:20.074" endtime="20210903 03:05:22.101"/>
+</kw>
+<status status="PASS" starttime="20210903 03:05:20.073" endtime="20210903 03:05:22.101"/>
+</kw>
+<kw name="Preencher campo com o e-mail &quot;emailinvalid@teste.com&quot;" library="resource" sourcename="Preencher campo com o e-mail &quot;${EMAIL_INVALIDO}&quot;">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CAMPO_EMAIL}</arg>
+<arg>${EMAIL_INVALIDO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210903 03:05:22.106" level="INFO">Typing text 'emailinvalid@teste.com' into text field 'css=input.MuiInputBase-input.MuiOutlinedInput-input'.</msg>
+<status status="PASS" starttime="20210903 03:05:22.104" endtime="20210903 03:05:22.459"/>
+</kw>
+<status status="PASS" starttime="20210903 03:05:22.102" endtime="20210903 03:05:22.459"/>
+</kw>
+<kw name="Preencher campo senha com &quot;1234testando&quot;" library="resource" sourcename="Preencher campo senha com &quot;${SENHA_INVALIDA}&quot;">
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${CAMPO_EMAIL}</arg>
+<arg>TAB</arg>
+<arg>${SENHA_INVALIDA}</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210903 03:05:22.463" level="INFO">Sending key(s) ('TAB', '1234testando') to css=input.MuiInputBase-input.MuiOutlinedInput-input element.</msg>
+<msg timestamp="20210903 03:05:22.791" level="INFO">Pressing special key TAB to element.</msg>
+<msg timestamp="20210903 03:05:22.791" level="INFO">Releasing special key TAB.</msg>
+<msg timestamp="20210903 03:05:22.823" level="INFO">Sending keys 1234testando</msg>
+<status status="PASS" starttime="20210903 03:05:22.462" endtime="20210903 03:05:22.990"/>
+</kw>
+<status status="PASS" starttime="20210903 03:05:22.460" endtime="20210903 03:05:22.990"/>
+</kw>
+<kw name="Clicar no botão entrar" library="resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${BTN_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210903 03:05:22.992" level="INFO">Clicking button 'id=botaoLogin'.</msg>
+<status status="PASS" starttime="20210903 03:05:22.991" endtime="20210903 03:05:23.091"/>
+</kw>
+<status status="PASS" starttime="20210903 03:05:22.991" endtime="20210903 03:05:23.091"/>
+</kw>
+<kw name="Verificar se a mensagem &quot;Dados inválidos, tente novamente!&quot; é exibida" library="resource" sourcename="Verificar se a mensagem &quot;${MENSAGEM_DADOS_INVALIDOS}&quot; é exibida">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>text=Identificação</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20210903 03:05:23.113" level="INFO">Current page contains text 'Identificação'.</msg>
+<status status="PASS" starttime="20210903 03:05:23.092" endtime="20210903 03:05:23.113"/>
+</kw>
+<status status="PASS" starttime="20210903 03:05:23.092" endtime="20210903 03:05:23.113"/>
+</kw>
+<status status="PASS" starttime="20210903 03:05:10.443" endtime="20210903 03:05:23.114"/>
+</test>
+<test id="s1-t2" name="Cenario 2: acessar site e pesquisar por iphone">
+<kw name="Digitar &quot;Iphone&quot; na pesquisa" library="resource" sourcename="Digitar &quot;${PESQUISA_IPHONE}&quot; na pesquisa">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CAMPO_BUSCA}</arg>
+<arg>${PESQUISA_IPHONE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210903 03:05:23.118" level="INFO">Typing text 'Iphone' into text field 'id=input-busca'.</msg>
+<status status="PASS" starttime="20210903 03:05:23.117" endtime="20210903 03:05:23.222"/>
+</kw>
+<status status="PASS" starttime="20210903 03:05:23.117" endtime="20210903 03:05:23.223"/>
+</kw>
+<kw name="Efetuar pesquisa" library="resource">
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${CAMPO_BUSCA}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210903 03:05:23.224" level="INFO">Sending key(s) ('ENTER',) to id=input-busca element.</msg>
+<msg timestamp="20210903 03:05:23.516" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20210903 03:05:23.516" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20210903 03:05:23.224" endtime="20210903 03:05:25.995"/>
+</kw>
+<status status="PASS" starttime="20210903 03:05:23.223" endtime="20210903 03:05:25.996"/>
+</kw>
+<kw name="Verificar se o produto é exibido na lista de resultados com base na mensagem &quot;Iphone&quot;" library="resource" sourcename="Verificar se o produto é exibido na lista de resultados com base na mensagem &quot;${RESULT_PESQUISA}&quot;">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>text=${RESULT_PESQUISA}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20210903 03:05:26.033" level="INFO">Current page contains text 'Iphone'.</msg>
+<status status="PASS" starttime="20210903 03:05:25.997" endtime="20210903 03:05:26.033"/>
+</kw>
+<status status="PASS" starttime="20210903 03:05:25.997" endtime="20210903 03:05:26.033"/>
+</kw>
+<status status="PASS" starttime="20210903 03:05:23.116" endtime="20210903 03:05:26.034"/>
+</test>
+<test id="s1-t3" name="Cenario 3: Selecionar uma categoria no menu de “Departamento” e adiciona um produto no carrinho">
+<kw name="Clicar no botão &quot;TODOS OS DEPARTAMENTOS&quot;" library="resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${TODOS_DEP}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210903 03:05:26.034" level="INFO">Clicking button 'css=button.sc-kafWEX.fediYQ'.</msg>
+<status status="PASS" starttime="20210903 03:05:26.034" endtime="20210903 03:05:26.139"/>
+</kw>
+<status status="PASS" starttime="20210903 03:05:26.034" endtime="20210903 03:05:26.140"/>
+</kw>
+<kw name="Entrar na opção &quot;Hardware&quot;" library="resource">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>Hardware</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20210903 03:05:26.148" level="INFO">Clicking link 'Hardware'.</msg>
+<status status="PASS" starttime="20210903 03:05:26.147" endtime="20210903 03:05:29.041"/>
+</kw>
+<status status="PASS" starttime="20210903 03:05:26.147" endtime="20210903 03:05:29.042"/>
+</kw>
+<kw name="Clicar no item" library="resource">
+<kw name="Click Image" library="SeleniumLibrary">
+<arg>class=imageCard</arg>
+<doc>Clicks an image identified by ``locator``.</doc>
+<msg timestamp="20210903 03:05:29.043" level="INFO">Clicking image 'class=imageCard'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210903 03:05:30.147" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210903 03:05:29.076" endtime="20210903 03:05:30.148"/>
+</kw>
+<msg timestamp="20210903 03:05:30.152" level="FAIL">Input with locator 'class=imageCard' not found.</msg>
+<status status="FAIL" starttime="20210903 03:05:29.043" endtime="20210903 03:05:30.152"/>
+</kw>
+<status status="FAIL" starttime="20210903 03:05:29.042" endtime="20210903 03:05:30.154"/>
+</kw>
+<kw name="Clicar no botão ir para o carrinho" library="resource">
+<status status="NOT RUN" starttime="20210903 03:05:30.155" endtime="20210903 03:05:30.155"/>
+</kw>
+<kw name="Fechar navegador" library="resource">
+<status status="NOT RUN" starttime="20210903 03:05:30.156" endtime="20210903 03:05:30.156"/>
+</kw>
+<status status="FAIL" starttime="20210903 03:05:26.034" endtime="20210903 03:05:30.156">Input with locator 'class=imageCard' not found.</status>
+</test>
+<status status="FAIL" starttime="20210903 03:05:10.162" endtime="20210903 03:05:30.159"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="1" skip="0" id="s1" name="Teste">Teste</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
